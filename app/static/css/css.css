@@ -1,0 +1,151 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6/09/2022, 8:32:01 p. m.
+    Author     : Constanza Isaza Maya
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    color: #674ea7;
+}
+
+
+a {
+    text-decoration: none;
+    color: #674ea7;
+    font-size: 1.4rem;
+    font-weight: 600;
+    
+}
+
+a:hover {
+    color: #9fdbf8;
+}
+
+
+.header {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+
+.header ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0.2rem;
+    
+}
+
+
+
+
+.logo {
+    max-width: 7rem;
+    max-height: 7rem;
+}
+
+
+.line {
+    margin: 0 auto;
+    height: 1rem;
+    background: linear-gradient(#9fdbf8,#8e7cc3,#674ea7)
+}
+
+.footer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem ;
+}
+
+.footer ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0.3rem;
+    padding-bottom: 0;
+    text-decoration: none;
+}
+
+
+.columnas {
+    width: 80%;
+    height: autorem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.columnas .card {
+    width: 30rem;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 2px 2px rgba(0,0,0, 0);
+    overflow-y: hidden;
+    margin: 2rem;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+
+}
+
+.columnas .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0,0,0, 0.2);
+
+}
+
+.columnas .card img {
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    position: relative; 
+    margin-bottom: 1rem;
+    
+}
+
+.columnas .card h3 {
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+.contacto-privacidad {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.contacto-privacidad div {
+    margin: 0 2rem;
+}
+
+.contacto-privacidad div p {
+    margin: 1rem 0;
+}
+
+.contacto-privacidad div img {
+    width: 20rem;
+    height: 20rem;
+}
+
