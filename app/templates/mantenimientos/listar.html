@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block js %}
+<script>
+  function eliminarMantenimiento(id) {
+    Swal.fire({
+      title: '¿Está Seguro de Eliminar el Mantenimiento?',
+      text: "Esta acción NO se puede deshacer",
+      icon: 'question',  
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/eliminar-mantenimiento/"+id+"/"; 
+      }
+    })
+  } 
+</script>
+
+
+{% endblock %}
+
+{% load static %}
+
+{% block title %}Mantenimientos{% endblock %}
+
+{% block content %}
+
+  <div class="card">
+    <div class="card-body">
+
+      <h2 class="d-flex justify-content-center">Mantenimientos</h2>
+
+      <div class="d-flex justify-content-end mb-3 px-3">
+
+        <form class="d-flex mx-5" role="search" method="get">
+          <input class="form-control me-2" type="text" placeholder="buscar" aria-label="Search" name="buscar" value="">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
+        <a href="{% url 'agregar_mantenimiento' %}" class="btn btn-success">Nuevo Mantenimiento</a>
+      </div>
+      
+      <table class="table table-striped table-hover table-responsive-sm">
+
+        <tr>
+
+          <th class="text-center">Tipo de Mantenimiento</th>
+          <th class="text-center">Fecha de Mantenimiento</th>
+          <th class="text-center">Observaciones</th>
+          <th class="text-center">Equipo</th>
+          <th class="text-center">Tecnico</th>
+          <th class="text-center">Opciones</th>
+
+        </tr>
+
+        {% for m in mantenimientos %}
+        <tr>
+
+          <td class="text-center">{{ m.tipo_mantenimiento | capfirst }}</td>
+          <td class="text-center">{{ m.fecha_mantenimiento | capfirst }}</td>
+          <td class="text-center">{{ m.observaciones | capfirst }}</td>
+          <td class="text-center">{{ m.equipo | capfirst }}</td>
+          <td class="text-center">{{ m.tecnico | capfirst }}</td>
+
+          <td class="text-center">
+            <a href="{% url 'editar_mantenimiento' m.id %}" class="btn btn-secondary btn-sm">Editar</a>
+            <a href="#" onclick="eliminarMantenimiento({{ m.id }})" class="btn btn-danger btn-sm">Eliminar</a>
+          </td>
+
+        </tr>
+
+        {% endfor %}
+
+      </table>
+
+    </div>
+  </div>
+
+{% endblock %}

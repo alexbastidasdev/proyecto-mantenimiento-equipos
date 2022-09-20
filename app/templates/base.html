@@ -21,8 +21,8 @@
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'listar_equipos' %}">Equipos</a></li>
-                <li><a href="{% url 'mantenimientos' %}">Mantenimientos</a></li>
-                <li><a href="{% url 'tecnicos' %}">Técnicos</a></li>
+                <li><a href="{% url 'listar_mantenimientos' %}">Mantenimientos</a></li>
+                <li><a href="{% url 'listar_tecnicos' %}">Técnicos</a></li>
                 
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>

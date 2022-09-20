@@ -8,6 +8,7 @@ class Equipo(models.Model):
     fecha_ingreso = models.DateField(auto_now_add=True)
     dependencia = models.CharField(max_length=50)
     periodicidad_mantenimiento = models.IntegerField()
+    proximo_mantenimiento = models.DateField()
     estado_equipo = models.BooleanField(default=True)
 
     def __str__(self):
@@ -27,9 +28,8 @@ class Tecnico(models.Model):
 
 class Mantenimiento(models.Model):
 
-    tipo_manteniento = models.CharField(max_length=50)
+    tipo_mantenimiento = models.CharField(max_length=50)
     fecha_mantenimiento = models.DateField(auto_now_add=True)
-    proximo_mantenimiento = models.DateField()
     observaciones = models.TextField()
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     tecnico = models.ForeignKey(Tecnico, on_delete=models.CASCADE)

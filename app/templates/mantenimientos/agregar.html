@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Agregar Equipo{% endblock %}
+{% block title %}Agregar Mantenimiento{% endblock %}
 
 {% block content %}
 
@@ -13,7 +13,7 @@
 
             <div class="card-body">
                 <div class="d-flex justify-content-center">
-                    <h3>Agregar Equipo</h3>
+                    <h3>Agregar Mantenimiento</h3>
                 </div>
                 
 
@@ -21,23 +21,19 @@
 
                     {% csrf_token %}
 
-                    {{ form.nombre | as_crispy_field }}
+                    {{ form.tipo_mantenimiento | as_crispy_field }}
                     <br>
-                    {{ form.marca | as_crispy_field }}
+                    {{ form.observaciones | as_crispy_field }}
                     <br>
-                    {{ form.dependencia | as_crispy_field }}
+                    {{ form.equipo | as_crispy_field }}
                     <br>
-                    {{ form.periodicidad_mantenimiento | as_crispy_field }}
-                    <br>
-                    {{ form.proximo_mantenimiento | as_crispy_field }}
-                    <br>
-                    {{ form.estado_equipo | as_crispy_field }}
+                    {{ form.tecnico | as_crispy_field }}
                     <br>
         
                     <div class="d-flex justify-content-end m-2">
 
                         <input type="reset" value="Limpiar" class="btn btn-outline-secondary m-1">
-                        <a href="{% url 'listar_equipos' %}" class="btn btn-secondary m-1">Cancelar</a>
+                        <a href="{% url 'listar_mantenimientos' %}" class="btn btn-secondary m-1">Cancelar</a>
                         <input type="submit" value="Guardar" class="btn btn-success m-1">
         
                     </div>

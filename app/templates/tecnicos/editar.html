@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Editar Equipo{% endblock %}
+{% block title %}Editar Técnico{% endblock %}
 
 {% block content %}
 
@@ -13,7 +13,7 @@
 
             <div class="card-body">
                 <div class="d-flex justify-content-center">
-                    <h3>Editar Equipo</h3>
+                    <h3>Editar Técnico</h3>
                 </div>
                 
 
@@ -23,20 +23,18 @@
                     
                     {{ form.nombre | as_crispy_field }}
                     <br>
-                    {{ form.marca | as_crispy_field }}
+                    {{ form.apellidos | as_crispy_field }}
                     <br>
-                    {{ form.dependencia | as_crispy_field }}
+                    {{ form.cedula | as_crispy_field }}
                     <br>
-                    {{ form.periodicidad_mantenimiento | as_crispy_field }}
+                    {{ form.telefono | as_crispy_field }}
                     <br>
-                    {{ form.proximo_mantenimiento | as_crispy_field }}
-                    <br>
-                    {{ form.estado_equipo | as_crispy_field }}
+                    {{ form.empresa | as_crispy_field }}
                     <br>
         
                     <div class="d-flex justify-content-end m-2">
         
-                        <a href="{% url 'listar_equipos' %}" class="btn btn-secondary m-1">Cancelar</a>
+                        <a href="{% url 'listar_tecnicos' %}" class="btn btn-secondary m-1">Cancelar</a>
                         <input type="submit" value="Editar" class="btn btn-success m-1">
         
                     </div>
@@ -51,7 +49,6 @@
 
     </div>
 </div>
-
 
 
 {% endblock %}
