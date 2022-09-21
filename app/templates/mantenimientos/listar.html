@@ -64,9 +64,9 @@
           <td class="text-center">{{ m.tipo_mantenimiento | capfirst }}</td>
           <td class="text-center">{{ m.fecha_mantenimiento | capfirst }}</td>
           <td class="text-center">{{ m.observaciones | capfirst }}</td>
-          <td class="text-center">{{ m.equipo | capfirst }}</td>
-          <td class="text-center">{{ m.tecnico | capfirst }}</td>
-
+          <td class="text-center"><a class="fs-6" href="{% url 'listar_equipos' %}">{{ m.equipo | capfirst }}</a></td>
+          <td class="text-center"><a class="fs-6" href="{% url 'listar_tecnicos' %}">{{ m.tecnico | capfirst }}</a></td>
+          
           <td class="text-center">
             <a href="{% url 'editar_mantenimiento' m.id %}" class="btn btn-secondary btn-sm">Editar</a>
             <a href="#" onclick="eliminarMantenimiento({{ m.id }})" class="btn btn-danger btn-sm">Eliminar</a>
